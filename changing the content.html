@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Changing the Content</title>
+    </head>
+    <script type = "text/javascript" src ="jquery-3.6.0.js"></script>
+<style type = "text/css">
+    
+    #circle{
+        background-color: blueviolet;
+        width:150px;
+        height:150px;
+        border-radius: 50%;
+    }
+    
+    </style>
+
+   
+
+<body>
+    <div id = "circle">
+    </div>
+    
+    <p>This is some Text!</p>
+    <iframe src ="detecting%20a%20click.html"></iframe> 
+    
+    <script type = "text/javascript">
+//    /* $("#circle").click(function(){
+//         $("p").html("The Text is Changed!");
+        
+//     }); */
+        
+//       /*  $("#circle").click(function(){
+//            alert($("p").html());
+//         }); */
+        
+         
+//       /*  $("#circle").hover(function(){
+//            alert($("p").html());
+//         });
+//         */
+        $("#circle").hover(function(){
+            $("iframe").attr("src", "https://jquery.com/download/");
+        });
+        
+    </script>
+    
+    </body>
+
+
+
+</html>

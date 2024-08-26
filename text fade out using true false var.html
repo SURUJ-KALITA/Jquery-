@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>
+    
+    </title>
+    </head>
+    <script type = "text/javascript" src = "jquery-3.6.0.js"></script>
+    <style type = "text/css">
+        #text{
+            display: none;
+            color:blue;
+            
+        }
+    
+    </style>
+
+<body>
+    <p id = "text">This is some Text</p>
+    <button id = "toggle">Toggle</button>
+    
+    <script type = "text/javascript">
+        var textShowing = true;
+    $("#toggle").click(function(){
+        if (textShowing){
+            $("#text").fadeOut(function(){
+                textShowing = false;
+            });
+        }else{
+                $("#text").fadeIn(function(){
+                    textShowing = true;
+                });
+            }
+        
+        
+    });
+    </script>
+    
+    
+    
+    
+    
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

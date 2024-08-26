@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>
+    website style
+    </title>
+    </head>
+    <script type ="text/javascript" src = "jquery-3.6.0.js">
+    
+    </script>
+    
+<style type = "text/css">
+      #circle{
+            width:100px;
+            height:100px;
+            background-color:darkgreen;
+            border-radius: 50%;
+            margin-bottom: 50px;
+            
+        }
+        
+    .square{
+        width:100px;
+        height:100px;
+        background-color: red;
+        margin-bottom: 50px;
+        
+    }
+    
+    </style>
+
+<body>
+   
+    <div id = "circle">
+    
+    </div>
+    
+    <div class = "square">
+    
+    </div>
+    <div class = "square">
+    </div>
+    <script type = "text/javascript">
+    
+       /* $("#circle").click(function(){
+            $("#circle").css("background-color" , "red");
+            
+        }); */
+        
+      /*  $("#circle").click(function(){
+          alert($("#circle").css("background-color") ) ;
+        });
+        */
+        
+      /*  $("#circle").click(function(){
+            alert($("body").css("width"));
+        });
+        */
+        
+        /* $("#circle").click(function(){
+            $("#circle").css("display" , "none");
+        });
+        */
+        
+       /* $("div").click(function(){
+            $(this).css("display" , "none");
+        });  */
+        
+       /* $("div").click(function(){
+                  alert("You Clicked on a " + $(this).attr("id"));     
+                       });
+        
+        */
+        
+    $("div").click(function(){
+        if($(this).attr("id") =="circle") { 
+            alert("You Clicked on a circle" );
+                 $("#circle").css("background-color" , "red");  
+            } else{
+                alert("you clicked on a square");
+                $(".square").css("background-color" , "pink");
+            }
+        
+    });
+    </script>
+    
+    
+    </body>
+
+
+
+
+
+
+</html>

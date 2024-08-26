@@ -1,0 +1,153 @@
+    <html>
+    <title>
+    Form Validation
+    </title>
+    <head></head>
+    <script type = "text/javascript" src = "jquery-3.6.0.slim.min"></script>
+   
+    <style type = "text/css">
+    
+    
+    body{
+        font-size: 200%;
+    }
+    
+    input{
+        padding-left:5px;
+        height:40;
+        font-size: 30px;
+        border: 1px solid grey ;
+        
+        
+    }
+    
+    .wrapper{
+        width:500px;
+        margin: 0 auto;
+    }
+    
+    label{
+        
+        position: relative;
+        left:-100px;
+        
+    }
+    #email{
+      position:relative;
+        left:100px;
+        
+    }   
+            
+    
+    
+    #tele{
+        position:relative;
+        left:184px;
+        top:-20px;
+    }
+    
+    #phone{
+        position:relative;
+        top:12px;
+    }
+    #password{
+        float: left;
+    }
+    #pass{
+        position:relative;
+        left:184px;
+        top:-40px;
+    }
+    
+    #passwrd{
+        position: relative;
+        top:-8px;
+    }
+    
+    #confirmed{
+        position:relative;
+        top:-10px;
+    }
+    
+    #cn-pass{
+        position: relative;
+        left:184px;
+        top:-45px;
+    }
+    #submitbutton{
+        width:200px;
+        position:relative;
+        left:184px;
+        background-color: grey;
+    }
+    
+    
+    #errorMessage{
+        color:red;
+        font-size: 50% !important;
+        position: relative;
+        left:-100px;
+    }
+    
+    #succes-message{
+        color:green;
+        font-size:50% !important;
+        display:none;
+    }
+    
+    </style>
+
+<body>
+    
+    <div class = "wrapper">
+        
+        <div id = "errorMessage"></div>
+        <div id = "succes-message">congratulation. You got it</div>
+   <div id = "emailwr">
+    <label for = "email">Email</label>
+    <input type = "text" name = "email" id = "email" placeholder = "eg..yourname@gmail.com">
+        </div>
+        <div id = "telephone">
+        <label for = "telephone" id = "phone">Telephone</label>
+        <input type = "text" name = "telephone" placeholder = "eg..0123456789" id = "tele">
+        </div>
+        <div id = "password">
+        <label for = "password" id = "passwrd">Password</label>
+        <input type = "password" name = "password" id = "pass">
+        </div>
+        <div id = "confirm">
+        <label for = "confirm-password" id = "confirmed">Confirm Password</label>
+            <input type = "password" name = "confirm-password" id = "cn-pass">
+        </div>
+        <div id = "sbmit">
+          <input type = "submit" id = "submitbutton" value = "Sign Up">
+     </div>
+        </div>
+       
+    <script type = "text/javascript">
+              function isEmail(email) {
+              var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+              return regex.test(email);
+                 }
+               $("#submitbutton").click(function(){
+                                        alert(isEmail($("#email").val()));
+                                        
+                                        }) ;
+                   
+               
+        
+        
+         </script>
+    
+    
+    
+    </body> 
+    
+    
+    
+    
+    
+  
+
+
+</html>

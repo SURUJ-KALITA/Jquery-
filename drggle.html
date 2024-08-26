@@ -1,0 +1,73 @@
+<html>
+
+<title>draggable Icon</title>
+<head>
+    
+    
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    </head>
+    
+    <style type = "text/css">
+    
+        #draggable3{
+            height:250px;
+            width:250px;
+            background-color: chartreuse;
+        }
+        
+        #resizable{
+            height:150px;
+            width:150px;
+            background-color: aqua;
+            position:relative;
+            top:10px;
+            
+        }
+        
+    </style>
+<body>
+    
+    <div id = "draggable">
+    Drag Me !
+    </div>
+    
+    <div id = "draggable2">
+    drag me !</div>
+    
+    <div id = "draggable3">
+        <span id = "stuck">Well I am stuck here !</span>
+    </div>
+    <div id = "resizable">
+    </div>
+
+    <script type = "text/javascript">
+  
+    $( "#draggable" ).draggable({ axis: "y" });
+ $("#draggable2").draggable({ axis: "x"});
+            $("#stuck").draggable({ containment: "parent" });
+         $("#resizable").resizable({grid:50});
+  
+          
+  </script> 
+         
+            
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

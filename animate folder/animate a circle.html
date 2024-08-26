@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Animate Content</title>
+    </head>
+    <script type = "text/javascript" src = "jquery-3.6.0.js">
+     </script>
+    <style type = "text/css">
+        #circle{
+            width:200px;
+            height:200px;
+            border-radius: 50%;
+            background-color: aqua;
+        }
+    </style>
+    
+<body>
+    
+   <div id = "circle">
+    </div> 
+    <script type = "text/javascript">
+    $("#circle").click(function(){
+       $(this).animate({
+           width:"400px",
+           height:"400px",
+           marginLeft:"50px",
+           marginTop:"30px",
+       } ,  2000 , function(){
+           $(this).css("background-color" , "red");
+       });
+    });
+    
+    
+    
+    
+    </script>
+    
+    
+    
+    
+    </body>
+
+
+</html>

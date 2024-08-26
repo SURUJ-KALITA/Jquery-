@@ -1,0 +1,279 @@
+<html>
+<head>
+    <title>Codeplayer</title>
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <style type = "text/css">
+        #header{
+            width:100%;
+            height:35px;
+            background-color: #F7F7F7;
+            margin: 0 auto;
+            border-bottom: 1px grey solid;
+            border-top: 1px grey solid;
+        }
+        body{
+            margin:0;
+            padding:0;
+        }
+    
+        #logo{
+            padding-left: 5px;
+            padding-top: 7px;
+        }
+        
+        #file{
+            float:left;
+            position:relative;
+            top:-18px;
+            left:100px;
+        }
+        
+        #library{
+            float:left;
+            position:relative;
+            left:120px;
+            top:-18px;
+        }
+        
+        #center-div{
+            width:345px;
+            height:28px;
+            background-color: #F7F7F7;
+            position:relative;
+            left:400px;
+            top:-33px;
+            border:1px grey solid;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            
+            
+        }
+        #html{
+            position: relative;
+            left:10px;
+            top:0px;
+            padding-right: 50px;
+            width:50px;
+            padding-right: 6px;
+            height:28px;
+            border-right: 1px grey solid;
+            
+            padding-left: 5px;
+            margin-left: -9px;
+        
+            
+            
+        }
+        
+        #css{
+            position:relative;
+            left:78px;
+            top:-28px;
+            width:45px;
+            height:23px;
+            border-right:1px grey solid;
+            padding-top: 5px;   
+            
+        }
+        
+        #javascript{
+            position:relative;
+            width:77px;
+            height:23px;
+            left:130px;
+            top:-56px;
+            padding-top: 5px;
+            padding-left: -2px;
+            border-right: 1px grey solid;
+            
+        }
+        
+        #console{
+            width:70px;
+            height:22px;
+            text-align: center;
+            position:relative;
+            top:-83px;
+            left:209px;
+            padding-top: 5px;
+            border-right: 1px grey solid;    
+        }
+        #output{
+            width:65px;
+            height:22px;
+            text-align:center;
+            position:relative;
+            top:-110px;
+            left:280px;
+            text-align: center;
+            padding-top: 5px;
+        }
+        
+        .login-register{
+            float:right;
+            width:140px;
+            height:22px;
+            margin-right: 140px;
+            background-color: #FFEB3B;
+            text-align: center;
+            margin-top: -20px;
+            padding-top:4px;
+            
+        }
+        
+        .blog{
+            float:right;
+            width:50px;
+            height:21px;
+            margin-right: -190px;
+            margin-top: -20px;
+            text-align: center;
+            padding-top:5px;
+        }
+        
+        .help{
+            float:right;
+            width:50px;
+            height:20px;
+            margin-right:-240px;
+            margin-top:-15px;
+            text-align: center;
+            
+        }
+      
+        
+        .active{
+            background-color:darkseagreen;
+        }
+        
+        .highlightedButton{
+            background-color: grey;
+        }
+        
+        textarea{
+            width:50%;  
+            height:100%;
+            resize: none;
+        }
+        
+         .Panel{
+            float:left;
+        
+        
+        }
+    /*    #outputpanel{
+          /*  width:49.7%; */
+    
+           /* height:90%;  */
+        
+        
+        
+        
+    /*    #cssPanel{
+            display: none;
+        }
+        #javascriptPanel{
+            display: none;
+        }
+        */
+        
+        .hidden{
+            display: none;
+        }
+        
+    
+    </style>
+
+
+<body>
+    
+    
+    <div id = "header">
+    
+        <div id = "logo">Code-Player</div>
+        <div id = "file">File</div>
+        <div id = "library">Add-library</div>
+        <div class = "login-register">Login or Register</div>
+        <div class = "blog">Blog</div>
+        <div class = "help">Help</div>
+   
+    
+    </div>
+    
+     <div id = "center-div">
+         <div class = "toggleButton active" id = "html">HTML</div>
+         <div class = "toggleButton" id = "css" >CSS</div>
+         <div class = "toggleButton" id = "javascript">JavaScript</div>
+         <div class = "toggleButton" id = "console">Console</div>
+         <div class = "toggleButton active"  id = "output">Output</div>
+         </div>
+    <div class = "BodyContainer">
+    
+        <textarea   id = "htmlPanel"        class = "panel"><p id = "paragraph">Hello World!</p></textarea>
+        <textarea   id = "cssPanel"         class = "panel hidden">p{ color:green; } </textarea>
+        <textarea   id = "javascriptPanel"  class = "panel hidden">document.getElementById("paragraph").innerHTML = "HELLO SURUJ !";</textarea>
+        <iframe     id = "outputPanel"      class = "panel"></iframe>
+        
+    </div>
+    
+    
+    <script type = "text/javascript">
+        
+       function updatecssoutput(){
+            $("iframe").contents().find("html").html("<html><head><style type = 'text/css'>" + $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
+           
+           document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
+           
+           
+        }
+       
+        
+        
+        
+    $(".toggleButton").hover(function(){
+        /*$(this).css("background-color", grey)*/;
+        $(this).addClass("highlightedButton");
+         }, function(){
+        $(this).removeClass("highlightedButton");
+         });
+        $(".toggleButton").click(function(){
+            $(this).toggleClass("active");
+           $(this).removeClass("highlightedButton");
+        
+            
+            var panelid = $(this).attr("id") + "Panel";
+            $("#" + panelid).toggleClass("hidden");
+           var numberOfActivePanels = 4 - $('.hidden').length;
+             $(".panel").width(($(window).width() / numberOfActivePanels) - 10);
+             
+            
+        })
+    
+        $(".panel").height($(window).height() - $("#header").height() - 20); 
+        $(".panel").width(($(window).width() / 2 ) - 10); 
+         
+        updatecssoutput();
+        
+        $("textarea").on('change keyup paste', function() {
+        updatecssoutput();
+        });
+        
+        
+        /* $("iframe").contents().find("html").html('My html'); */
+        
+      
+    </script>
+    
+    
+    
+    </body>
+
+
+
+
+
+</html>
